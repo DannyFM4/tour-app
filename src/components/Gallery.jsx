@@ -14,9 +14,10 @@ const Gallery = ({tours, setTours, onRemove}) => {
         try {
             const response = await fetch('https://course-api.com/react-tours-project');
             const data = await response.json(); // Extract JSON data from the response
+            
             // Map the API data to only the field we need
-
             const trimmed = data.map((tour => ({
+                // Extracts the fields from the API
                 id: tour.id,
                 name: tour.name,
                 info: tour.info,
@@ -65,4 +66,5 @@ const Gallery = ({tours, setTours, onRemove}) => {
 
 };
 
+// exports the Gallery component
 export default Gallery;
