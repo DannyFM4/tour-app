@@ -26,7 +26,10 @@ const Gallery = ({tours, setTours, onRemove}) => {
             })));
             setTours(trimmed);
             setLoading(false);
-    } 
+    } catch (error) {
+            setError(true); // if fetch fails, it will show the error
+            setLoading(false); // set loading to false
+        }
     };
 
     // Run fetchTours when the component mounts
