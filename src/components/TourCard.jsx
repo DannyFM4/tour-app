@@ -8,7 +8,7 @@ const TourCard = ({id, name, info, price, image, onRemove}) => {
         <article className="tour-card">
             {/* Laysout the tour card information */}
             <h3>{name}</h3>
-            <h5 className="tour-price">{price}</h5>
+            <h5 className="tour-price">${price}</h5>
             <img src={image} alt={name} className="tour-image"/>
 
             <p>

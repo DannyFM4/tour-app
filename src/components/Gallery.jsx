@@ -12,7 +12,7 @@ const Gallery = ({tours, setTours, onRemove}) => {
 
     const fetchTours = async () => {
         try {
-            const response = await fetch('https://course-api.com/react-tours-project');
+            const response = await fetch('https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project');
             const data = await response.json(); // Extract JSON data from the response
             
             // Map the API data to only the field we need
@@ -26,10 +26,7 @@ const Gallery = ({tours, setTours, onRemove}) => {
             })));
             setTours(trimmed);
             setLoading(false);
-    } catch (error) {
-            setError(true); // if fetch fails, it will show the error
-            setLoading(false); // set loading to false
-        }
+    } 
     };
 
     // Run fetchTours when the component mounts
